@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<style>
+    * {box-sizing: border-box;}
+
+body {font-family: Verdana, sans-serif;
+  background-image:url("img7.jpg");
+}
+
+.mySlides {
+  display: none;
+
+}
+img {vertical-align: middle;}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  
+}
+.h3
+{
+  text-shadow: 5px 6px 10px rgb(233, 32, 143);
+  color: white;
+ font-size: 4vh;
+ text-align: center;
+}
+
+.text {
+  color: #2d07b8 ;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  
+}
+text {
+  color: #ce092a;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 10.0%;
+  text-align: center;
+  
+}
+
+
+.dot {
+  height: 20px;
+  width: 20px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 70%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: #f31616;
+}
+
+</style>
+<body onload="load()">
+  
+  <h3 class="h3">Images</h3>
+<div class="slideshow-container" style="text-align: center;">
+<div class="mySlides fade">
+  <img src="img1.jpg" style="width:60%" style="height:50%">
+  <div class="text">Img1</div>
+</div>
+<div class="mySlides fade">
+  <img src="img2.jpg" style="width:60%" style="height:50%">
+  <div class="text">Img2</div>
+</div>
+<div class="mySlides fade">
+  <img src="img3.jpg"style="width:40%" style="height:30%">
+  <div class="text">Img3</div>
+</div>
+<div class="mySlides fade">
+    <img src="img4.jpg"style="width:70%" style="height:50%">
+    <div class="text">Img4</div>
+  </div>
+  <div class="mySlides fade">
+    <img src="img5.jpg"style="width:60%" style="height:50%">
+    <div class="text">Img5</div>
+  </div>
+  <div class="mySlides fade">
+    <img src="img6.jpg"style="width:100%" style="height:80%">
+    
+  </div>
+  
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot">1</span> 
+  <span class="dot">2</span> 
+  <span class="dot">3</span>
+  <span class="dot">4</span>
+  <span class="dot">5</span>
+  <span class="dot">6</span>  
+</div>
+<script>
+function load()
+
+{ alert("Images are loaded"); }
+
+</script>
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); 
+}
+
+</script>
+
+</body>
+</html> 
